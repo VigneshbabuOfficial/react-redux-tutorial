@@ -3,6 +3,7 @@ import { buyCake } from "../redux/cake/cakeActions";
 import { connect } from "react-redux";
 
 function CakeContainer({ numOfCakes, buyCakes }) {
+  console.log("CakeContainer is called");
   return (
     <div>
       <h2>Num of Cakes - {numOfCakes}</h2>
@@ -12,12 +13,14 @@ function CakeContainer({ numOfCakes, buyCakes }) {
 }
 
 const mapStateToProps = (state) => {
+  console.log("CakeContainer - mapStateToProps is called");
   return {
     numOfCakes: state.numOfCakes,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log("CakeContainer - mapDispatchToProps is called");
   return {
     buyCakes: () => dispatch(buyCake()),
   };
